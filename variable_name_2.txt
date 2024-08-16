@@ -3,8 +3,9 @@
 1) unknown_user -> is_unknown_user
 // неизвестный пользователь
 2) unix_format -> is_unix_timestamp
-// проверка соответствия переменной unix-time формату
-3) 
+// соответствие переменной unix-time формату
+3) table_has_rows -> is_empty_table
+// проверка, является ли таблица пустой (не имеет строк) 
 4) ...
 5) ...
 
