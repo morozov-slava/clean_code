@@ -1,0 +1,27 @@
+Найдите 12 примеров имён в вашем коде, которые следует избегать, исправьте, и выложите на гитхаб в формате "было - стало" (с учётом контекста). 
+
+1) df_proprocessing/df_preprocessed -> df_preprocessed/
+// 
+
+
+2) Было:
+   key_fields = ["id", "source", "target", "name", "state_id", "last_state_update"]
+   Стало:
+   links_fields = ["id", "source", "target", "name", "state_id", "last_state_update"]
+   // перечень полей для выгрузки данных по API для ссылок (функция: "get_links_data")
+
+
+3) export_data -> incidents_to_export
+// данные для выгрузк
+
+
+4) start_time/end_time -> start_time_sec/end_time_sec
+
+// часто использую для подсчёта времени работы определённых компонентов программы (измеряется в секундах)
+
+
+5) rca_nodes_evaluation -> rca_
+// 
+
+
+
