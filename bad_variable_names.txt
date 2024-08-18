@@ -1,13 +1,13 @@
 Найдите 12 примеров имён в вашем коде, которые следует избегать, исправьте, и выложите на гитхаб в формате "было - стало" (с учётом контекста). 
 
-1) df_proprocessing/df_preprocessed -> df_preprocessed/
-// 
+1) df_processing/df_preprocessed -> df_raw/df_preprocessed
+// два датафрейма: сырые данные и предобработанные
 
 2) key_fields -> links_fields
 // перечень полей для выгрузки данных по API для ссылок (функция: "get_links_data")
 
 3) export_data -> incidents_to_export
-// данные для выгрузк
+// данные по произошедшим инцидентам для экспорта по API
 
 4) start_time/end_time -> start_time_sec/end_time_sec
 // часто использую для подсчёта времени работы определённых компонентов программы (измеряется в секундах)
@@ -27,8 +27,8 @@
 9) feature_names -> features / features_list
 // список фичей (признаков) для обучения модели
 
-10) max_len_share -> 
-// ...
+10) y_km -> kmeans_predicted
+// предсказанные моделью кластеризации (K-means) значения 
 
 11) df_temp -> df_one_camp_revenue
 // клиентские данные по выручки в рамках одной маркетинговой кампании
