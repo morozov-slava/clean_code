@@ -3,25 +3,36 @@
 1) df_proprocessing/df_preprocessed -> df_preprocessed/
 // 
 
-
-2) Было:
-   key_fields = ["id", "source", "target", "name", "state_id", "last_state_update"]
-   Стало:
-   links_fields = ["id", "source", "target", "name", "state_id", "last_state_update"]
-   // перечень полей для выгрузки данных по API для ссылок (функция: "get_links_data")
-
+2) key_fields -> links_fields
+// перечень полей для выгрузки данных по API для ссылок (функция: "get_links_data")
 
 3) export_data -> incidents_to_export
 // данные для выгрузк
 
-
 4) start_time/end_time -> start_time_sec/end_time_sec
-
 // часто использую для подсчёта времени работы определённых компонентов программы (измеряется в секундах)
 
+5) session_object -> saymon_session
+// объект сессии для выполнения запросов (обращение к платформе SAYMON по API)
 
-5) rca_nodes_evaluation -> rca_
-// 
+6) ma -> moving_avg_array
+// массив, хранящий значения скользящего среднего
 
+7) otlrs_thr -> outliers_thr
+// допустимая доля выбросов в данных (порог)
 
+8) result -> kpss_statistics
+// объект, хранящий результат теста KPSS (для проверки стационарности временного ряда)
+
+9) feature_names -> features / features_list
+// список фичей (признаков) для обучения модели
+
+10) max_len_share -> 
+// ...
+
+11) df_temp -> df_one_camp_revenue
+// клиентские данные по выручки в рамках одной маркетинговой кампании
+
+12) metrics_dict_params -> revenue_metrics
+// справочник с указанием метрик, используемых для расчёта выручки
 
