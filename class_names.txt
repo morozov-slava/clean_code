@@ -1,5 +1,19 @@
-
-
 3.1. Улучшите пять имён классов в вашем коде.
+1. GraphObj -> DiGraph
+// класс объекта "направленный граф (Direction Graph)"
+2. Preprocessor -> SaymonDataPreprocessor
+// класс предобработки данных из платформы SAYMON
+3. Handler -> OracleHandler
+// класс для манипулирования БД Oracle через интерфейс Python
+4. Schema -> TablesSchema
+// класс хранящий схемы данных различных таблиц
+5. Forecaster -> ForecastModel
+// класс прогнозной модели машинного обучения
 
 3.2. Улучшите семь имён методов и объектов по схеме из пункта 2. 
+
+1. predict/forecast -> predict
+// т.к. в большинстве моделей 
+2. 
+
+
