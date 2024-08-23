@@ -13,4 +13,29 @@
 // функция для проверки наличия сезонности во временном ряде и периодичность сезонности
 // лучше разбить на 2 функции: проверка наличия сезонности (has_seasonality) и периодичность сезонности (get_seasonality_cycle)
 
-5. 
+5. find_outliers -> get_anomaly_indices
+// функция, возвращающая индексы аномальных значений
+
+6. fit_and_predict_random_forest -> fit_predict
+// функция для обучения модели Random Forest, возвращающая прогнозные значения после обучения модели
+// лучше создать класс RandomForest с методом fit_predict
+
+7. evaluate_model_quality -> calc_model_error_metrics
+// функция, рассчитывающая перечень метрик ошибок модели
+
+8. moving_average_predict -> smooth_with_moving_average
+// сгладить входные данные с помощью скользящего среднего
+
+9. col_existence_checker -> is_column_exist
+// проверка наличия столбца с указанным именем в таблице
+
+10. YYYYMM_converter -> datetime_to_yyyymm_string
+// конвертация объекта типа datetime в строку типа YYYYMM
+
+11. start_month_date -> get_first_date_of_month
+// для указанной даты возвращает первую дату месяца
+
+12. make_transaction -> modify_table
+// метод класса DatabaseHandler для выполнения запросов по модификации таблицы: DROP, TRUNCATE, UPDATE и т.п.
+
+
