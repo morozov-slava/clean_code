@@ -27,14 +27,14 @@
 9. PROD_MODE -> IS_TEST_RUN
 // поменял логику: флаг, является ли запуск тестовым
 
-10. filepath_info -> FILEPATH_INFO_LEVEL_LOGS
+10. filepath_info -> FILEPATH_INFO_LOGS
 // изменил наименование константы на заглавные буквы + дал константе более понятное имя: путь до файла, в который будут записывать логи уровня INFO
 
-11. N_MONTH_DURATION -> CAMP_MONITORING_DURATION_MONTHS
-//
+11. N_MONTH_DURATION -> CAMP_LIFETIME_MONTHS
+// дал константе более понятное имя: длительность мониторинга кампании (время жизни кампании) в месяцах
 
-12. ...
-//
+12. TRAIN_SPLIT_THR -> TRAINING_SET_SHARE
+// дал константе более понятное имя: доля тренировочной выборки (при разбиении датасета)
 
 
 
