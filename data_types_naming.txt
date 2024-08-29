@@ -8,9 +8,19 @@
 
 2. Было:  
    rf_model.fit(X, y, random_state=42)
-   Стало: 
+   Стало:
    SEED = 42
    rf_model.fit(X, y, random_state=SEED)
 // избавился от магических символов -> перенёс их в константу 
 
-3. 
+3. Было:
+   if is_table_exist(tablename) and len(df_clients) >= MIN_CLIENTS_FOR_CAMP:
+      run_campaign() 
+   Стало:
+   is_revenue_table_exist = is_table_exist(tablename_revenue)
+   is_enough_clients_sample = len(df_clients) >= MIN_CLIENTS_FOR_CAMP
+   if is_revenue_table_exist and is_enough_clients_sample:
+      run_campaign()
+   
+   
+
