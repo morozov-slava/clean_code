@@ -97,8 +97,7 @@
 
 12. Было:
     loading_objs_fields = ["id", "name", "state_id", "last_state_update", "entityType"]
-   
+    loading_objs_fields = ",".join(loading_objs_fields)
 
     Стало:
     loading_objs_fields = ["id", "name", "state_id", "last_state_update", "entityType"]
-    ["id", "name", "state_id", "last_state_update", "entityType"]
