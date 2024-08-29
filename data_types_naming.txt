@@ -71,4 +71,20 @@
    def get_uplift_percent(offer_price: int, current_price: int):
       return (np.float64(offer_price) - np.float64(current_price) / np.float64(current_price)) * 100
 // Повысил точность для вещественных чисел, преобразовав в значения с более высокой точностью
-      
+
+9. Было:
+   MAX_CLIENT_AGE_YEARS = 30.5
+   Стало:
+   MAX_CLIENT_AGE_DAYS = int(30.5 * 365)
+// Преобразование типа данных из float в int с минимальной потерей полезных данных
+
+10. Было:
+    if not new_client.status == 0 and current_date >= plan_report_date:
+       insert_to_database(DB_CONFIGS, new_client.client_id)
+    Стало:
+    is_test_client = new_client.status == 0
+    is_report_period = current_date >= plan_report_date
+    if not is_test_client and is_report_period:
+       insert_to_database(DB_CONFIGS, new_client.client_id)
+// избавился от магических символов -> перенёс их в константы
+
