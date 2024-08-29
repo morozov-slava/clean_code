@@ -63,5 +63,12 @@
    Tables = Table(basetable="...", campaigns_revenue="...")
 // Использование специализированных типов данных для более удобного и эффективного создания переменных
 
-8. 
-   
+8. Было:
+   def get_uplift_percent(offer_price: int, current_price: int):
+      return (offer_price - current_price) / current_price * 100
+   Стало:
+   import numpy as np
+   def get_uplift_percent(offer_price: int, current_price: int):
+      return (np.float64(offer_price) - np.float64(current_price) / np.float64(current_price)) * 100
+// Повысил точность для вещественных чисел, преобразовав в значения с более высокой точностью
+      
