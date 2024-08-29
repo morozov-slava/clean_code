@@ -99,5 +99,10 @@
     objects_tree_fields = ["id", "name", "state_id", "last_state_update", "entityType"]
     objects_tree_fields = ",".join(objects_tree_fields)
     Стало:
-    LOADING_OBJECT_FIELDS = ["id", "name", "state_id", "last_state_update", "entityType"]
-    fields_string = 
+    OBJECTS_TREE_FIELDS = ["id", "name", "state_id", "last_state_update", "entityType"]
+    fields_string = ",".join(OBJECTS_TREE_FIELDS)
+// отказался от перехода из одного типа в другой (вместо этого сделал список полей константой, а строчку с полями в необходимом формате сохранил в отдельную переменную)
+
+
+
+
