@@ -88,3 +88,9 @@
        insert_to_database(DB_CONFIGS, new_client.client_id)
 // избавился от магических символов -> перенёс их в константы
 
+11. Было:
+    TEST_SIZE_CLASSIFIER = 0.225
+    Стало:
+    from decimal import Decimal
+    TEST_SIZE_CLASSIFIER = Decimal(0.225)
+// изменил тип вещественной переменной на тип с большей точностью 
