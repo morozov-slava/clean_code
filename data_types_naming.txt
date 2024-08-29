@@ -1,7 +1,7 @@
 Внесите 12 правок в свой код с учётом рекомендаций из данного занятия, и напишите по каждой, как и что конкретно вы улучшили. 
 
 1. Было:  
-   df["revenue_per_clients"] = df["camp_revenue"] / df["n_clients"] 
+   df["revenue_per_client_control_group"] = df["camp_revenue"] / df["control_group_size"] 
    Стало: 
    df["revenue_per_clients"] = df["camp_revenue"].div(df["n_clients"]).replace(np.inf, 0)
 // при делении двух массивов предусмотрел вариант деления на 0 с обработкой результата деления на 0
@@ -52,5 +52,16 @@
       raise ValueError("There are NaN value in dataframe")
 // переработал преобразование типов на случай наличия невалидных значений
 
-7. 
+7. Было:
+   BASETABLE = "..."
+   CAMPAIGNS_REVENUE_TABLE = "..."
+   Стало:
+   from typing import NamedTuple
+   class Table(NamedTuple):
+       basetable: str
+       campaigns_revenue: str
+   Tables = Table(basetable="...", campaigns_revenue="...")
+// Использование специализированных типов данных для более удобного и эффективного создания переменных
+
+8. 
    
