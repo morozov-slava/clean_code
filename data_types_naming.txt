@@ -94,3 +94,11 @@
     from decimal import Decimal
     TEST_SIZE_CLASSIFIER = Decimal(0.225)
 // изменил тип вещественной переменной на тип с большей точностью 
+
+12. Было:
+    loading_objs_fields = ["id", "name", "state_id", "last_state_update", "entityType"]
+   
+
+    Стало:
+    loading_objs_fields = ["id", "name", "state_id", "last_state_update", "entityType"]
+    ["id", "name", "state_id", "last_state_update", "entityType"]
