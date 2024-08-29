@@ -96,8 +96,8 @@
 // изменил тип вещественной переменной на тип с большей точностью 
 
 12. Было:
-    loading_objs_fields = ["id", "name", "state_id", "last_state_update", "entityType"]
-    loading_objs_fields = ",".join(loading_objs_fields)
-
+    objects_tree_fields = ["id", "name", "state_id", "last_state_update", "entityType"]
+    objects_tree_fields = ",".join(objects_tree_fields)
     Стало:
-    loading_objs_fields = ["id", "name", "state_id", "last_state_update", "entityType"]
+    LOADING_OBJECT_FIELDS = ["id", "name", "state_id", "last_state_update", "entityType"]
+    fields_string = 
