@@ -21,6 +21,36 @@
    is_enough_clients_sample = len(df_clients) >= MIN_CLIENTS_FOR_CAMP
    if is_revenue_table_exist and is_enough_clients_sample:
       run_campaign()
-   
-   
+// добавил логические переменные для лучшей читаемости кода
 
+4. Было:
+   LEARNING_RATE = 0.001
+   Стало:
+   from decimal import Decimal
+   LEARNING_RATE = Decimal(0.001)
+// изменил тип вещественной переменной на тип с большей точностью 
+
+5. Было:
+   def get_active_clients(df: pd.DataFrame):
+      df_active_clients = df[df["is_active"] == 1]
+      return df_active_clients
+   df_active_clients = get_active_clients(df)
+   Стало:
+   def get_active_clients(df: pd.DataFrame, is_active_column: str, value: int):
+      df_active_clients = df[df["is_active"] == 1]
+      return df_active_clients
+   IS_ACTIVE_COLUMN = "is_active"
+   IS_ACTIVE_VALUE = 1
+   df_active_clients = get_active_clients(df, IS_ACTIVE_COLUMN, IS_ACTIVE_VALUE)
+// избавился от магических символов -> перенёс их в константы
+
+6. Было:
+   df["activation_date"] = pd.to_datetime(df["activation_date"], format="%Y-%m-%d")
+   Стало:
+   df["activation_date"] = pd.to_datetime(df["activation_date"], format="%Y-%m-%d", errors="coerce")
+   if df["activation_date"].isna().any():
+      raise ValueError("There are NaN value in dataframe")
+// переработал преобразование типов на случай наличия невалидных значений
+
+7. 
+   
