@@ -14,12 +14,28 @@
    for df in objects_dfs:
      ...
    df = pd.concat([dt_objects, df_links])
-
    Стало:
    for df in objects_dfs:
      ...
    df_all_objects = pd.concat([dt_objects, df_links])
 // изменил имя переменной, чтоб оно отличалось от переменной цикла во избежания рисков ошибок
 
-4. ...
-//
+4. Было:
+   model = joblib.load("...")
+   ...
+   model = RandomForestClassifier()
+   Стало:
+   ts_forecast_model = joblib.load("...")
+   ...
+   classifier_model = RandomForestClassifier()
+// изменил имена переменных, т.к. ранее одна и та же переменная приобретала разные значения моделей в течение исполнения кода
+
+5. tariffs_to_offer = get_actual_tariffs()
+   for camp_date in all_camp_dates:
+      df_one_camp_date = df_clients[df_clients["CAMP_DATE"] == camp_date]
+      df_offerable_clients = df_one_camp_date[df_one_camp_date["TARIFF"].isin(tariffs_to_offer)]
+// переместил переменную tariffs_to_offer ближе к началу цикла, где она используется 
+
+6. ...
+
+
