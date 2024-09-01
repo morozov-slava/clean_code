@@ -48,6 +48,10 @@
       ...
 // добавил проверку на наличие пропусков в данных в некотором столбце датафрейма
 
-
+8. Было:
+   core_fields = ["client_id", "phone_number"]
+   Стало:
+   BUSINESS_FIELDS = ["client_id", "phone_number"]
+//
 
 
