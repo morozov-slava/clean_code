@@ -80,5 +80,12 @@
     Logger = create_logger(LOG_FILEPATH)
 // преобразовал переменную в константу + сместил объявление переменной ближе к функции, использующей её
 
-13. 
+13. def make_feature_engineering(df):
+       if len(df) == 0:
+          raise ValueError("Dataframe is empty")
+       ...
+// добавил проверку на пустой входной датафрейм
+
+14. 
+
 
