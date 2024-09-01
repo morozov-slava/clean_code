@@ -86,6 +86,19 @@
        ...
 // добавил проверку на пустой входной датафрейм
 
-14. 
+14. Было:
+    n_trials = 30
+    ...
+    study.optimize(n_trials)
+    Стало:
+    N_TRIALS = 30
+    study.optimize(N_TRIALS)
+// преобразовал переменную в константу, т.к. переменная используется как хранилище значения
 
+15. Было:
+    df_processed = filter_by_actual_tariffs(df_raw, tariffs)
+    df_processed = exclude_terminated_clients(df_processed, termination_id)
+    Стало:
+    df_processed = process_clients_data(df_raw, tariffs, termination_id)
+// код предобработки данных вынес в отдельную функцию и исключил использование переменной дважды
 
