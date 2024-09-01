@@ -42,6 +42,12 @@
       ...
 // добавил проверку на наличие столбца в некотором датафрейме
 
-7. 
+7. def preprocess_feature(df, col_name):
+      if df[col_name].isna().sum() > 0:
+         raise ValueError(f"There are NA values in column: {col_name}")
+      ...
+// добавил проверку на наличие пропусков в данных в некотором столбце датафрейма
+
+
 
 
