@@ -8,7 +8,7 @@
 
 2. if any(prices_array < 0):
      raise ValueError("price value must be positive number")
-// добавил проверку на значение переменной
+// добавил проверку, чтоб в массиве цен не было отрицательных значений
 
 3. Было:
    for df in objects_dfs:
@@ -30,12 +30,18 @@
    classifier_model = RandomForestClassifier()
 // изменил имена переменных, т.к. ранее одна и та же переменная приобретала разные значения моделей в течение исполнения кода
 
-5. tariffs_to_offer = get_actual_tariffs()
+5. tariffs_to_offer = get_actual_tariffs(CAMPAIGN_TYPE)
    for camp_date in all_camp_dates:
       df_one_camp_date = df_clients[df_clients["CAMP_DATE"] == camp_date]
       df_offerable_clients = df_one_camp_date[df_one_camp_date["TARIFF"].isin(tariffs_to_offer)]
 // переместил переменную tariffs_to_offer ближе к началу цикла, где она используется 
 
-6. ...
+6. def encode_categorical_feature(df, col_name):
+      if col_name not in df.columns:
+         raise KeyError(f"Not found column '{col_name}'")
+      ...
+// добавил проверку на наличие столбца в некотором датафрейме
+
+7. 
 
 
