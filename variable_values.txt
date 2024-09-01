@@ -54,4 +54,16 @@
    BUSINESS_FIELDS = ["client_id", "phone_number"]
 // сменил имя переменной на более понятное + преобразовал в константу, т.к. переменная используется как хранилище значения
 
+9. Было:
+   df_processed = process_features(df, features_list)
+   df_processed = df_processed[df_processed["TARIFF"].isin(actual_tariffs)]
+   Стало:
+   df_processed = process_features(df, features_list)
+   df_with_actual_tariffs = df_processed[df_processed["TARIFF"].isin(actual_tariffs)]
+// сменил имя переменной после второго преобразования, чтоб не использовать одну и ту же переменную несколько раз
+
+10. assert len(X_train) + len(X_test) == len(df_features)
+// добавил проверку, чтоб при разбиении датасета на тренирочный и тестовый, совокупный размер датасета остался прежний
+
+11. 
 
