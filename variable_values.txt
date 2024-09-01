@@ -102,3 +102,4 @@
     df_processed = process_clients_data(df_raw, tariffs, termination_id)
 // код предобработки данных вынес в отдельную функцию и исключил использование переменной дважды
 
+
