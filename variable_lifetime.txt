@@ -61,12 +61,12 @@
 // перенос логики из различных элементов через инкапсуляцию класса
 
 6. Было:
-   def preprocess_links(df: pd.DataFrame, min_dataset_size):
+   def preprocess_links(df: pd.DataFrame, min_dataset_size: int):
       if len(df) < min_dataset_size:
          ...
       ...
    Стало:
-   def preprocess_links(df: pd.DataFrame, min_dataset_size):
+   def preprocess_links(df: pd.DataFrame, min_dataset_size: int):
       if len(df) < min_dataset_size:
          handle_low_size_dataset(df)
       ...
@@ -75,7 +75,17 @@
       ...
 // Разбиение одного большого метода на несколько маленьких
          
-7. 
+7. Было:
+   df = df.with_columns(
+      pl.lit(data_cleaned).alias("DATA")
+   )
+   Стало:
+   TS_STAT_COLUMN_NAME = "DATA"
+   preprocessor = DataframePreprocessor()
+   preprocessor.add_column(data_cleaned, TS_STAT_COLUMN_NAME)
+// 
+   
+
 
       
 
