@@ -81,8 +81,9 @@
    )
    Стало:
    TS_STAT_COLUMN_NAME = "DATA"
-   preprocessor = DataframePreprocessor()
+   preprocessor = DataframePreprocessor(df)
    preprocessor.add_column(data_cleaned, TS_STAT_COLUMN_NAME)
+   
 // 
    
 
