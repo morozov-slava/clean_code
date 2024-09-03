@@ -61,14 +61,20 @@
 // перенос логики из различных элементов через инкапсуляцию класса
 
 6. Было:
-   TABLENAME_REVENUE_REPORT = "..."
-   TABLENAME_NEW_CLIENTS = "..."
+   def preprocess_links(df: pd.DataFrame, min_dataset_size):
+      if len(df) < min_dataset_size:
+         ...
+      ...
    Стало:
-   class ReportTables:
-      revenue = "..."
-      new_clients = "..."
-// ...
+   def preprocess_links(df: pd.DataFrame, min_dataset_size):
+      if len(df) < min_dataset_size:
+         handle_low_size_dataset(df)
+      ...
 
+   def handle_low_size_dataset(df):
+      ...
+// Разбиение одного большого метода на несколько маленьких
+         
 7. 
 
       
