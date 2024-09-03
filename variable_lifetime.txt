@@ -47,7 +47,19 @@
    }
 // сгруппировал переменные, отвечающие за единую логику в одну переменную
 
+5. Было:
+   def update_report_meta(report, params):
+     report.name = params['name']
+     report.source = params['source']
+     report.email = params['email']
 
+   Стало:
+   class Report:
+       def update_meta(self, params):
+         self.name = info.get('name', self.name)
+         self.email = info.get('email', self.email)
+         self.address = info.get('address', self.address)
+//
 
 
 
