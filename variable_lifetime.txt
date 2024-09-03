@@ -73,18 +73,23 @@
 
    def handle_low_size_dataset(df):
       ...
-// Разбиение одного большого метода на несколько маленьких
+// разбиение одного большого метода на несколько маленьких
          
 7. Было:
-   df = df.with_columns(
+   df_processed = df.with_columns(
       pl.lit(data_cleaned).alias("DATA")
    )
    Стало:
    TS_STAT_COLUMN_NAME = "DATA"
    preprocessor = DataframePreprocessor(df)
    preprocessor.add_column(data_cleaned, TS_STAT_COLUMN_NAME)
-   
-// 
+// глобальную переменную перенёс в локальное пространство имён
+
+8. Было:
+   ...
+
+   Стало:
+   ...
    
 
 
