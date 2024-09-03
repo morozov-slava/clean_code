@@ -101,7 +101,12 @@
       return response.status_code == 200
 // избавился от магической константы и перенёс потенциальную переменную в логику метода
 
-10. 
+10. Было:
+    property_name = f"forecast{PROPERTY_DELIM}{metric_name}"
+
+    Стало:
+    def get_forecast_property_name(metric_name: str, delim: str):
+        return f"forecast{delim}{metric_name}"
       
       
    
