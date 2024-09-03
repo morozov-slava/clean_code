@@ -1,0 +1,19 @@
+Внесите 15 правок в свой код с учётом рекомендаций из данного занятия, и напишите по каждой, как и что конкретно вы улучшили. 
+
+1. Было:
+   validation_results = {}
+   for metric_name, df in data_history.items():
+      validate(df, ...)
+     
+   Стало:
+   for metric_name, df in data_history.items():
+     if DataframeValidator.is_empty(df):
+       ...
+     if DataframeValidator.is_allowed_nulls_share(df):
+       ...
+//
+
+2. ...
+//
+
+
