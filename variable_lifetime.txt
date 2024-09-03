@@ -138,6 +138,35 @@
       model.fit(X)
       return model
    Стало:
+
+   class KmeansModel:
+      def __init__(self):
+         self.model = None
+
+      def fit(self, X, **kmeans_params):
+         model = KMeans(**kmeans_params)
+         model.fit(X)
+         self.model = model
+// объект модели кластеризации, которую ранее возвращал и сохранял как переменную, теперь сохраняю как переменную класса
+
+14. Было:
+    revenue_report = create_revenue_report(...)
+    revenue_report = add_report_field(revenue_report, field_name)
+    Стало:
+    class RevenueReport:
+       def __init__(...):
+          self.report = self.create(...)
+
+       def create(self, ...):
+          ...
+
+       def add_field(self, ...):
+          ...
+          self.report
+// объединил отдельные методы по работе с сущностью report в отдельный класс, чтоб не создавать отдельные переменные при каждой модификации объекта
+
+15. 
+       
     
        
       
