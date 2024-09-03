@@ -3,17 +3,52 @@
 1. Было:
    validation_results = {}
    for metric_name, df in data_history.items():
-      validate(df, ...)
-     
+      validate(df, ...) 
    Стало:
    for metric_name, df in data_history.items():
      if DataframeValidator.is_empty(df):
        ...
      if DataframeValidator.is_allowed_nulls_share(df):
        ...
-//
+// преобразовал глобальную переменную в несколько методов, возвращающих булевы значения
 
-2. ...
-//
+2. Было:
+   df_processed = drop_outliers(df_raw, ...)
+   ...
+   df_processed = filter_by_tariffs(df_processed, ...)
+   Стало:
+   preprocessor = ClientsPreprocessor(df_raw)
+   preprocessor.drop_outliers(df_raw, ...)
+   preprocessor.filter_by_tariffs(df_raw, ...)
+   >>> preprocessor.df_processed
+// переменную, которая изменяется после каждого этапа обработки данных, вынес как переменную класса
+
+3. Было:
+   def check_outliers(thr: float):
+      global df_objects_tree
+      ...
+
+   Стало:
+   def check_outliers(df:pd.DataFrame, thr: float):
+      ...
+// перенёс переменную из глобального пространства имён в локальное
+
+4. Было:
+   LOGIN = ...
+   PASSWORD = ...
+   HOST = ...
+   PORT = ...
+   Стало:
+   DB_CONFIGS = {
+      "login": ...,
+      "password": ...,
+      "host": ...,
+      "port": ...
+   }
+// сгруппировал переменные, отвечающие за единую логику в одну переменную
+
+
+
+
 
 
