@@ -132,7 +132,12 @@
     )
 // т.к. глобальная переменная нигде не используется в коде, то не создаю отдельной переменной
 
-13.
+13. Было:
+    def fit_model(X, **clustering_kwargs):
+      model = KMeans(**clustering_kwargs)
+      model.fit(X)
+      return model
+   Стало:
     
        
       
