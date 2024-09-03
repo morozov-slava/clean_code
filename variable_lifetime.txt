@@ -95,6 +95,15 @@
 
 9. Было:
    if response.status_code != 200:
+      ...
+   Стало:
+   def is_success_response(response):
+      return response.status_code == 200
+// избавился от магической константы и перенёс потенциальную переменную в логику метода
+
+10. 
+      
+      
    
 
 
