@@ -52,14 +52,26 @@
      report.name = params['name']
      report.source = params['source']
      report.email = params['email']
-
    Стало:
    class CampaingsReport:
        def update_meta(self, params):
          self.name = params.get('name', self.name)
          self.source = params.get('source', self.source)
          self.email = params.get('email', self.email)
-// 
+// перенос логики из различных элементов через инкапсуляцию класса
+
+6. Было:
+   TABLENAME_REVENUE_REPORT = "..."
+   TABLENAME_NEW_CLIENTS = "..."
+   Стало:
+   class ReportTables:
+      revenue = "..."
+      new_clients = "..."
+// ...
+
+7. 
+
+      
 
 
 
