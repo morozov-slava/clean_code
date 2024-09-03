@@ -105,9 +105,36 @@
     property_name = f"forecast{PROPERTY_DELIM}{metric_name}"
 
     Стало:
-    def get_forecast_property_name(metric_name: str, delim: str):
+    def create_forecast_property_name(metric_name: str, delim: str):
         return f"forecast{delim}{metric_name}"
-      
+// глобальную переменную перенёс в локальное пространство имён. 
+// т.к. эта переменная используется один раз в коде, то можно получать к ней доступ через функцию 
+
+11. Было:
+    export_data = {
+      "timestamp": list(results["timestamps"]),
+      "data": list(results["forecast"])
+    }
+    Стало:
+    def prepare_export_params(timestamps_array: list, prediction_array: list):
+       export_data = {
+          "timestamp": timestamps_array,
+          "data": prediction_array
+      }
+      return export_data
+
+12. Было:
+    response = SaymonHandler.add_incident_property(incident_id, body)
+    export_results.append(response)
+    Стало:
+    export_results.append(
+       SaymonHandler.add_incident_property(incident_id, body)
+    )
+// т.к. глобальная переменная нигде не используется в коде, то не создаю отдельной переменной
+
+13.
+    
+       
       
    
 
