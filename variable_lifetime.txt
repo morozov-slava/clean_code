@@ -165,16 +165,18 @@
           self.report
 // объединил отдельные методы по работе с сущностью report в отдельный класс, чтоб не создавать отдельные переменные при каждой модификации объекта
 
-15. 
+15. Было:
+    def validate_clients_info(df: pd.DataFrame):
+       is_valid_number = all(df["PHONE_NUMBER"].str.len() == 12)
+       is_valid_revenue = all(df["REVENUE"] >= 0)
+    Стало:
+    def is_valid_phone_number(phone_number_array: pd.Series):
+       return all(phone_number_array.str.len() == 12)
+
+    def is_valid_clients_revenue(revenue_array: pd.Series):
+       return all(revenue_array >= 0)
+// разбиение одного большого метода на несколько маленьких
        
     
        
-      
-   
-
-
-      
-
-
-
 
