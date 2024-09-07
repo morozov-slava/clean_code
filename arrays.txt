@@ -6,9 +6,13 @@
      ...
      df_processed = process_objects_stat(df)
      processed_objects.append(df_processed)
-     
-     
-//
+   Стало:
+   processed_objects = dict()
+   for obj_id, df in objects_stat.items():
+     ...
+     df_processed = process_objects_stat(df)
+     processed_objects[obj_id] = df_processed    
+// Вместо массива для хранения статистики по объектам использую словарь, чтоб далее более безопасно извлекать необходимые наборы данных по уникальному id объекта
 
 2. ...
 //
