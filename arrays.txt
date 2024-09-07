@@ -1,0 +1,20 @@
+Приведите 5 примеров вашего кода, где вместо массивов можно использовать более безопасные структуры данных, или же работа с самими массивами может выполняться без их прямой индексации. 
+
+1. Было:
+   processed_objects = []
+   for df in objects_stat.values():
+     ...
+     df_processed = process_objects_stat(df)
+     processed_objects.append(df_processed)
+     
+     
+//
+
+2. ...
+//
+
+3. ...
+//
+
+
+
