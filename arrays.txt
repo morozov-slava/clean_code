@@ -12,9 +12,14 @@
      ...
      df_processed = process_objects_stat(df)
      processed_objects[obj_id] = df_processed    
-// Вместо массива для хранения статистики по объектам использую словарь, чтоб далее более безопасно извлекать необходимые наборы данных по уникальному id объекта
+// вместо массива для хранения статистики по объектам использую словарь, чтоб далее более безопасно извлекать необходимые наборы данных по уникальному id объекта
 
-2. ...
+2. Было:
+   report_meta = ["...", "...", "..."]
+   Стало:
+   from collections import namedtuple
+   ReportMeta = namedtuple('ReportMeta', ['name', 'source', 'period'])
+   report_meta = ReportMeta(name='...', source='...', period='...')
 //
 
 3. ...
