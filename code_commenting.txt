@@ -1,10 +1,36 @@
 3.1. Прокомментируйте 7 мест в своём коде там, где это явно уместно.
 
-1. 
-// ...
+1. # get incidents order
+   incidents_dates = dict(sorted(incidents_dates.items(), key=lambda x: x[1]))
+// здесь комментарий уместен, т.к. 
 
-2. 
+2. # metric and metric weight dot product 
+   total_value = sum([weights[k] * metrics[k] for k in metrics.keys()])
+
+3.  # keep only fresh incidents
+    min_incident_date = base_date - relativedelta(minutes=max_incident_duration_minutes)
+    df = df[df["timestamp"] >= min_incident_date]
+    df.index = range(len(df))
+// добавил комментарий, объясняющий бизнес-логику обработки данных 
+
+4. 
 
 
-  
+
 3.2. Если вы раньше делали комментарии к коду, найдите 5 мест, где эти комментарии были излишни, удалите их и сделайте сам код более наглядным. 
+
+1.  Было:
+    # Keep only key fields
+    links_fields = ["id", "entityId", "entityType", "state", "timestamp"]
+    try:
+        df = df[links_fields]
+    except KeyError:
+        raise KeyError("Not found key fields in incidents data")
+
+   Стало:
+   def filter_by_key_fields(df: pd.DataFrame, columns: list):
+      try:
+         df_filtered = df[columns]
+      except KeyError:
+         raise KeyError("Not found key fields in incidents data")
+      return df_filtered
