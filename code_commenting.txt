@@ -17,8 +17,10 @@
    not_found_share = (initial_size - df_recommendations.shape[0]) / initial_size
 //
 
-5. #
-   df_offerable = 
+5. # replace zero divided inf to zero
+   df = df.with_columns(
+      pl.when(pl.col("...").is_in([np.inf, -np.inf])).then(pl.lit(0)).otherwise(pl.col("...").alias("..."))
+   )
 
 
 
