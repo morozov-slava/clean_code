@@ -50,7 +50,7 @@
    df_offerable_tariffs = df.filter(
       pl.col("TARIFF_ID").is_in(offerable_tariffs)
    )
-// Здесь оказалось достаточно дать более понятное имя результирующей переменной, чтоб отказаться от комментария
+// здесь оказалось достаточно дать более понятное имя результирующей переменной, чтоб отказаться от комментария
 
 3. Было:
    # calculate business metrics
@@ -66,6 +66,23 @@
       )
       return df_metrics
    df_metrics = calculate_business_metrics(df)
+// блок кода, описанный комментарием вынес в отдельную функцию, что упростило его чтение и поддержку
 
-4. 
+4. Было:
+   # Types preprocessing
+   df = df.with_columns(
+      pl.col("...").cast(pl.Int64),
+      pl.col("...").cast(pl.Utf8),
+      ...
+   )
+   Стало:
+   def convert_fresh_clients_data_types(df: pl.DataFrame):
+      df_converted = df.with_columns(
+         pl.col("...").cast(pl.Int64),
+         pl.col("...").cast(pl.Utf8),
+         ...
+      )
+      return df_converted
+// блок кода, описанный комментарием вынес в отдельную функцию, что упростило его чтение и поддержку
+   
 
