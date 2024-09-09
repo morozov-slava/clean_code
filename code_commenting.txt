@@ -1,21 +1,25 @@
 3.1. Прокомментируйте 7 мест в своём коде там, где это явно уместно.
 
-1. # get incidents order
+1. # sort incidents by date from earliest
    incidents_dates = dict(sorted(incidents_dates.items(), key=lambda x: x[1]))
-// здесь комментарий уместен, т.к. 
+// добавил описание коду, чтоб было легче понять, какой конкретно функционал он выполняет
 
-2. # metric and metric weight dot product 
-   total_value = sum([weights[k] * metrics[k] for k in metrics.keys()])
+2. # Calculate revenue for all campaigns for the first calculation
+   if len(df_current_report):
+      query = query_active_campaigns(...)
+   else:
+      query = query_all_campaigns(...)
+// добавил описание бизнес-логики работы кода при расчёте выручки
 
-3.  # keep only fresh incidents
-    min_incident_date = base_date - relativedelta(minutes=max_incident_duration_minutes)
-    df = df[df["timestamp"] >= min_incident_date]
-    df.index = range(len(df))
+3. # keep only fresh incidents
+   min_incident_date = base_date - relativedelta(minutes=max_incident_duration_minutes)
+   df = df[df["timestamp"] >= min_incident_date]
+   df.index = range(len(df))
 // добавил комментарий, объясняющий бизнес-логику обработки данных 
 
-4. # clients share removed after preprocessing
-   not_found_share = (initial_size - df_recommendations.shape[0]) / initial_size
-//
+4. # keep only new campaigns
+   pre_period_camps = {k: v for k, v in pre_period_camps.items() if k not in report_mapper.keys()}
+// добавил комментарий, объясняющий бизнес-логику обработки данных 
 
 5. # replace zero divided inf to zero
    df = df.with_columns(
