@@ -13,7 +13,12 @@
     df.index = range(len(df))
 // добавил комментарий, объясняющий бизнес-логику обработки данных 
 
-4. 
+4. # clients share removed after preprocessing
+   not_found_share = (initial_size - df_recommendations.shape[0]) / initial_size
+//
+
+5. #
+   df_offerable = 
 
 
 
@@ -37,7 +42,30 @@
     df_key_fields = filter_by_key_fields(df, links_fields)
 
 2. Было:
-   ...
-
+   # tariffs which can be offer to clients
+   df_offerable = df.filter(
+      pl.col("TARIFF_ID").is_in(offerable_tariffs)
+   )
    Стало:
-   ...
+   df_offerable_tariffs = df.filter(
+      pl.col("TARIFF_ID").is_in(offerable_tariffs)
+   )
+// Здесь оказалось достаточно дать более понятное имя результирующей переменной, чтоб отказаться от комментария
+
+3. Было:
+   # calculate business metrics
+   df = df.with_columns(
+      (pl.col("...") - pl.col("...")).alias("..."),
+      (pl.col("...") * pl.col("...")).alias("...")
+   )
+   Стало:
+   def calculate_business_metrics(df: pl.DataFrame, ):
+      df_metrics = df.with_columns(
+         (pl.col("...") - pl.col("...")).alias("..."),
+         (pl.col("...") * pl.col("...")).alias("...")
+      )
+      return df_metrics
+   df_metrics = calculate_business_metrics(df)
+
+4. 
+
