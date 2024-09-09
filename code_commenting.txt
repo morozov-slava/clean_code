@@ -21,7 +21,15 @@
    df = df.with_columns(
       pl.when(pl.col("...").is_in([np.inf, -np.inf])).then(pl.lit(0)).otherwise(pl.col("...").alias("..."))
    )
+// т.к. синтаксис библиотеки достаточно сложен для прочтения, поэтому описал в комментарии целевое действие кода
 
+6. # get previous date because it's max available date in Database
+   base_date = dt.datetime.today() - relativedelta(days=1)
+// добавил комментарий, объясняющий бизнес-логику кода
+
+7. # monitoring starts from the first day of month
+   start_monitoring_date = dt.datetime(year=base_date.year, month=base_date.month, day=1)
+// добавил комментарий, объясняющий бизнес-логику кода
 
 
 3.2. Если вы раньше делали комментарии к коду, найдите 5 мест, где эти комментарии были излишни, удалите их и сделайте сам код более наглядным. 
