@@ -40,6 +40,7 @@
        return df_filtered
     links_fields = ["id", "entityId", "entityType", "state", "timestamp"]
     df_key_fields = filter_by_key_fields(df, links_fields)
+// блок кода, описанный комментарием вынес в отдельную функцию, что упростило его чтение и поддержку
 
 2. Было:
    # tariffs which can be offer to clients
@@ -85,4 +86,13 @@
       return df_converted
 // блок кода, описанный комментарием вынес в отдельную функцию, что упростило его чтение и поддержку
    
-
+5. Было:
+   # Keep only necessary fields for modeling
+   df_scoring_features = df_scoring_features.select(
+      features_list + ["CLUSTERING"]
+   )
+   Стало:
+   def get_scoring_features(df: pl.DataFrame, features: list):
+      return df.select(features)
+   df_features = get_scoring_features(df_scoring_features, features_list + ["CLUSTERING"])
+// блок кода, описанный комментарием вынес в отдельную функцию, что упростило его чтение и поддержку
