@@ -26,11 +26,18 @@
         df = df[links_fields]
     except KeyError:
         raise KeyError("Not found key fields in incidents data")
+    Стало:
+    def filter_by_key_fields(df: pd.DataFrame, columns: list):
+       try:
+          df_filtered = df[columns]
+       except KeyError:
+          raise KeyError("Not found key fields in incidents data")
+       return df_filtered
+    links_fields = ["id", "entityId", "entityType", "state", "timestamp"]
+    df_key_fields = filter_by_key_fields(df, links_fields)
+
+2. Было:
+   ...
 
    Стало:
-   def filter_by_key_fields(df: pd.DataFrame, columns: list):
-      try:
-         df_filtered = df[columns]
-      except KeyError:
-         raise KeyError("Not found key fields in incidents data")
-      return df_filtered
+   ...
