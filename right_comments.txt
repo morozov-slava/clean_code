@@ -38,11 +38,17 @@
    #    ...
 // Пункт 4 "Предупреждение о последствиях". Сообщаю о том, что данный вариант построения корридоров неэффективен на данных с сезонностью
 
-9. 
+9. # There are same clients in different campaigns (need to avoid duplicated clients) 
+   df_clients = df_clients.drop_duplicates(subset=[...])
+// Пункт 5 "Усиление". Уведомляю о значимости удаления дубликатов ввиду некоторой особенности данных
 
 10. # TODO: modify seasonality (automatic substitution of the upper threshold)
     seasonal_periods = trial.suggest_int('seasonal_periods', 3,  self.max_seasonal_periods) 
 // Пункт 6. "Комментарии TODO". Указываю на необходимость добавить возможность гибкой настройки переменной 'max_seasonal_periods'
 
+11. # Make K-Fold cross-validation with Optuna library
+    ...
+// Пункт 2 "Представление намерений". Сообщаю о планируемых дальнейших действиях по построению модели
 
+12. 
         
