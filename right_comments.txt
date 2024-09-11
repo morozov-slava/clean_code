@@ -4,7 +4,15 @@
    if resp_history.status_code != 200:
       # TODO: add logging
       continue
-// Комментарий из пункта 6 "Комментарии TODO". Указываю на место, где необходимо добавить логирование в будущем
+// Пункт 6 "Комментарии TODO". Указываю на место, где необходимо добавить логирование в будущем
 
-2. ...
-//
+2. # Fit different models and choose the best
+   for metric_name, df in data_history.items():
+      pass
+// Пункт 2 "Представление намерений". Указываю на то, что внутри цикла планирую построить несколько ML-моделей и затем выбрать среди них лучшую
+
+3.  # You can face missing values for test servers (this is not in the REST API documentation)
+    df["status"] = df["status"].fillna(df["updated"])
+// Пункт 4. "Предупреждения о последствиях". Здесь указываю на важность обработки пропущенных значений, т.к. есть проблема не описанная в документации к API
+
+4. 
