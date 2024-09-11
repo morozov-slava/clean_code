@@ -24,7 +24,16 @@
       continue
 // Пункт 6. "Комментарии TODO". Указываю на необходимость доработки функционала (добавление интерполяции данных)
 
-6. if
+6. def __init__(self, ClusteringObj=KMeansClustering):
+      super().__init__()
+      self.ClusteringObj = ClusteringObj # trained clustering object
+// Пункт 3. "Прояснение". Даю информацию о том, что на вход ожидается уже обученная модель кластеризации
+
+7. # Export data to test server if it's 'True'
+   TEST_MODE = False
+// Пункт 2 "Представление намерений". Указываю на то, что будет, если значение константы выставить на True
+
+8. 
 
 
 
