@@ -13,7 +13,7 @@
 
 3.  # You can face missing values for test servers (this is not in the REST API documentation)
     df["status"] = df["status"].fillna(df["updated"])
-// Пункт 4. "Предупреждения о последствиях". Здесь указываю на важность обработки пропущенных значений, т.к. есть проблема не описанная в документации к API
+// Пункт 5. "Усиление". Здесь указываю на важность обработки пропущенных значений, т.к. есть проблема не описанная в документации к REST API
 
 4. # Add 'EntityType' field (for links objects = 2)
    df["entityType"] = 2
@@ -33,9 +33,12 @@
    TEST_MODE = False
 // Пункт 2 "Представление намерений". Указываю на то, что будет, если значение константы выставить на True
 
-8. 
+8. # This corridors approach give terrible results for seasonality time-series
+   # if ADD_DYNAMIC_CORRIDORS:
+   #    ...
+// Пункт 4 "Предупреждение о последствиях". Сообщаю о том, что данный вариант построения корридоров неэффективен на данных с сезонностью
 
-
+9. 
 
 10. # TODO: modify seasonality (automatic substitution of the upper threshold)
     seasonal_periods = trial.suggest_int('seasonal_periods', 3,  self.max_seasonal_periods) 
