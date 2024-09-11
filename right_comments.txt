@@ -15,4 +15,22 @@
     df["status"] = df["status"].fillna(df["updated"])
 // Пункт 4. "Предупреждения о последствиях". Здесь указываю на важность обработки пропущенных значений, т.к. есть проблема не описанная в документации к API
 
-4. 
+4. # Add 'EntityType' field (for links objects = 2)
+   df["entityType"] = 2
+// Пункт 1. "Информативные комментарии" (хотя в конкретном случае значение "2" можно было бы вынести как константу: LINKS_ENTITY_TYPE = 2, а переменную df переименовать в df_links)
+
+5. if len(data_history) != 0:
+      # TODO: add interpolation
+      continue
+// Пункт 6. "Комментарии TODO". Указываю на необходимость доработки функционала (добавление интерполяции данных)
+
+6. if
+
+
+
+10. # TODO: modify seasonality (automatic substitution of the upper threshold)
+    seasonal_periods = trial.suggest_int('seasonal_periods', 3,  self.max_seasonal_periods) 
+// Пункт 6. "Комментарии TODO". Указываю на необходимость добавить возможность гибкой настройки переменной 'max_seasonal_periods'
+
+
+        
