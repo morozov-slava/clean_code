@@ -5,4 +5,8 @@
        del data_history[metric_name]
 // Пункт 4 "Шум". Данный комментарий можно просто убрать, т.к. код является достаточно читаемым и понятным (что не отменяет необходимость его рефакторинга в целом)
 
-2. 
+2. # ForecastCorridor = cr.IqrCorridors()
+   # lower_bound, upper_bound = ForecastCorridor.make_corridors(y_full, WINDOW_SIZE, DEVIATION_FACTOR)
+   # lower_bound, upper_bound = lower_bound[-len(y_pred):], upper_bound[-len(y_pred):]
+   # add timestamps for forecast intervals
+// Пункт 11 "Закомментированный код"
