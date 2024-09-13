@@ -9,4 +9,4 @@
    # lower_bound, upper_bound = ForecastCorridor.make_corridors(y_full, WINDOW_SIZE, DEVIATION_FACTOR)
    # lower_bound, upper_bound = lower_bound[-len(y_pred):], upper_bound[-len(y_pred):]
    # add timestamps for forecast intervals
-// Пункт 11 "Закомментированный код"
+// Пункт 11 "Закомментированный код". ...
