@@ -75,7 +75,7 @@
             "analysis_period": analysis_period,
             "health_status": 1
        }
-// 12. "Не используйте комментарии там, где можно использовать функцию или переменную"
+// Пункт 12. "Не используйте комментарии там, где можно использовать функцию или переменную"
 // Решение: создать 2 функции "are_all_batteries_healthy()" и "get_healthy_battery_report()"
    if are_all_batteries_healthy(data):
       total_analysis_result[obj_id] = get_healthy_battery_report(analysis_period)
@@ -95,8 +95,11 @@
 14. ...
 // ...
 
-15. ...
-// ...
+15. # Save total analysis results for analysed batteris
+    with open("battery_analysis_result.txt", "w") as f:
+        f.write(str(total_analysis_result))
+// Пункт 7 "Избыточные комментарии". Т.к. прокомментированный код является достаточно простым для понимания,
+// то в данном случае комментарий в принципе не нужен
 
 
 
