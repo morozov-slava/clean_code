@@ -23,14 +23,18 @@
 4. ...
 //
 
-5. ...
-//
+5. ###############
+   ### Logging ###
+   ###############
+   logger_file = lb.create_file_logger()
+   if STREAM_LOGGING:
+       logger_stream = lb.create_stream_logger()
+// Пункт 5. "Позиционные маркеры". Выделяют блок кода, где мы определяем логгер. Этот комментарий только загромождает код, поэтому его следует убрать.
 
 6. # Keep only key fields
    key_fields = ["id", "source", "target", "name", "state_id", "last_state_update", "entityType"]
    df = df[key_fields]
 // Пункт 4 "Шум". Данный комментарий не даёт никакой информации. Его можно просто убрать.
-
 
 7.  # Back to default format
     data_cleaned = Scaler.inverse_transform(data_cleaned)
