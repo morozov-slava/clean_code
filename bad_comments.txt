@@ -26,13 +26,17 @@
 5. ...
 //
 
-6. ...
-//
+6. # Keep only key fields
+   key_fields = ["id", "source", "target", "name", "state_id", "last_state_update", "entityType"]
+   df = df[key_fields]
+// Пункт 4 "Шум". Данный комментарий не даёт никакой информации. Его можно просто убрать.
+
 
 7.  # Back to default format
     data_cleaned = Scaler.inverse_transform(data_cleaned)
     data_cleaned = data_cleaned[:, 1]
-// Пункт 9 "Нелокальная информация"
+// Пункт 9 "Неочевидный комментарий". Из комментария неясно, что возвращается в формат "по умолчанию".
+// Решение: Вынести процесс стандартизации в отдельный класс DataScaler с соответсвующими методами
 
 8. # Schema for objects tree request
    schema_tree = {
@@ -52,3 +56,4 @@
    data_preprocessed = Scaler.fit_transform(data)
 // Пункт 4 "Шум". Данный комментарий не даёт никакой информации. Его можно просто убрать.
 
+10. 
