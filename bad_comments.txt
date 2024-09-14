@@ -18,7 +18,7 @@
       "lower_bound": lower_bound,
       "upper_bound": upper_bound
    }
-// Пункт 4 "Шум". Данный комментарий не даёт никакой информации. Его можно просто убрать
+// Пункт 4 "Шум". Данный комментарий не даёт никакой информации. Его можно просто убрать.
 
 4. ...
 //
@@ -29,8 +29,10 @@
 6. ...
 //
 
-7. ...
-//
+7.  # Back to default format
+    data_cleaned = Scaler.inverse_transform(data_cleaned)
+    data_cleaned = data_cleaned[:, 1]
+// Пункт 9 "Нелокальная информация"
 
 8. # Schema for objects tree request
    schema_tree = {
@@ -45,5 +47,8 @@
 // Пункт 2 "Бормотание". Невнятный комментарий, который не даёт какой-то точной информации. 
 // Решение: изменить имя переменной на "objects_tree_schema", а комментарий убрать
 
-9. # 
+9. # Make scaler
+   Scaler = StandardScaler()
+   data_preprocessed = Scaler.fit_transform(data)
+// Пункт 4 "Шум". Данный комментарий не даёт никакой информации. Его можно просто убрать.
 
