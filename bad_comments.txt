@@ -76,9 +76,9 @@
             "health_status": 1
        }
 // 12. "Не используйте комментарии там, где можно использовать функцию или переменную"
-// Решение: создать 2 функции "are_all_batteries_healthy()" и "get_healthy_battery_param()"
-if are_all_batteries_healthy(data):
-   total_analysis_result[obj_id] = get_healthy_battery_param(analysis_period)
+// Решение: создать 2 функции "are_all_batteries_healthy()" и "get_healthy_battery_report()"
+   if are_all_batteries_healthy(data):
+      total_analysis_result[obj_id] = get_healthy_battery_report(analysis_period)
 
 12. #############################
     ### Prepare final results ###
