@@ -8,5 +8,42 @@
 2. # ForecastCorridor = cr.IqrCorridors()
    # lower_bound, upper_bound = ForecastCorridor.make_corridors(y_full, WINDOW_SIZE, DEVIATION_FACTOR)
    # lower_bound, upper_bound = lower_bound[-len(y_pred):], upper_bound[-len(y_pred):]
-   # add timestamps for forecast intervals
-// Пункт 11 "Закомментированный код". ...
+// Пункт 11 "Закомментированный код". Оставил закомментированным код старой модели, которая использовалась в предыдущей версии. Код необходимо просто убрать
+
+3. # Add to result
+   results_modeling[f"{obj_id}=={metric_name}"] = {
+      "best_model_name": best_model_name,
+      "timestamps": fc_timestamps,
+      "forecast": y_pred,
+      "lower_bound": lower_bound,
+      "upper_bound": upper_bound
+   }
+// Пункт 4 "Шум". Данный комментарий не даёт никакой информации. Его можно просто убрать
+
+4. ...
+//
+
+5. ...
+//
+
+6. ...
+//
+
+7. ...
+//
+
+8. # Schema for objects tree request
+   schema_tree = {
+      "name": pl.String,
+      "child_ids": pl.List(pl.String),
+      "state_id": pl.Int64,
+      "class_id": pl.String,
+      "id": pl.String,
+      "discovery_id": pl.String,
+      "parent_id": pl.List(pl.String)
+  }
+// Пункт 2 "Бормотание". Невнятный комментарий, который не даёт какой-то точной информации. 
+// Решение: изменить имя переменной на "objects_tree_schema", а комментарий убрать
+
+
+
