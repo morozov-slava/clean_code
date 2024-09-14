@@ -68,11 +68,26 @@
 10. ... 
 // ...
 
-11. ...
-// ...
+11. # Если данных по проблемным батареям нет, т.е. батарея здоровая
+    if len(data) == 0:
+       total_analysis_result[obj_id] = {
+            "problem_modules": [],
+            "analysis_period": analysis_period,
+            "health_status": 1
+       }
+// 12. "Не используйте комментарии там, где можно использовать функцию или переменную"
+// Решение: создать 2 функции "are_all_batteries_healthy()" и "get_healthy_battery_param()"
+if are_all_batteries_healthy(data):
+   total_analysis_result[obj_id] = get_healthy_battery_param(analysis_period)
 
-12. ...
-// ...
+12. #############################
+    ### Prepare final results ###
+    #############################
+    total_analysis_result = {}
+    for obj_id, data in analysis_results.items():
+       ...
+// Пункт 5. "Позиционные маркеры". Выделяют блок кода, где мы определяем логгер. 
+// Этот комментарий только загромождает код, но ничего полезного не сообщает поэтому его следует убрать.
 
 13. ...
 // ...
